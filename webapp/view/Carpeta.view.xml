@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="profertil.instructivos.controller.Carpeta"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false">
+
+        <semantic:titleHeading>
+            <Title text="Title Heading Here" />
+        </semantic:titleHeading>
+
+
+        <semantic:headerContent>
+            <Text text="Header Content Here" />
+        </semantic:headerContent>
+
+    
+        <semantic:content>
+           <Text text="Semantic Content Here" />
+        </semantic:content>
+
+
+    </semantic:SemanticPage>
+
+</mvc:View>
