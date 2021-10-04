@@ -1,0 +1,356 @@
+{
+    "objects": [
+      {
+        "object": {
+          "properties": {
+            "cmis:objectId": {
+              "id": "cmis:objectId",
+              "localName": "cmis:objectId",
+              "displayName": "cmis:objectId",
+              "queryName": "cmis:objectId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "6FChMv2UrhDHorhwkVV2iiQ2XOnH_5hS8rR9dxak5PQ"
+            },
+            "sap:parentIds": {
+              "id": "sap:parentIds",
+              "localName": "sap:parentIds",
+              "displayName": "sap:parentIds",
+              "queryName": "sap:parentIds",
+              "type": "id",
+              "cardinality": "multi",
+              "value": [
+                "5599557000360fdd55e33416"
+              ]
+            },
+            "cmis:name": {
+              "id": "cmis:name",
+              "localName": "cmis:name",
+              "displayName": "cmis:name",
+              "queryName": "cmis:name",
+              "type": "string",
+              "cardinality": "single",
+              "value": "Dealers"
+            },
+            "cmis:lastModifiedBy": {
+              "id": "cmis:lastModifiedBy",
+              "localName": "cmis:lastModifiedBy",
+              "displayName": "cmis:lastModifiedBy",
+              "queryName": "cmis:lastModifiedBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:objectTypeId": {
+              "id": "cmis:objectTypeId",
+              "localName": "cmis:objectTypeId",
+              "displayName": "cmis:objectTypeId",
+              "queryName": "cmis:objectTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:lastModificationDate": {
+              "id": "cmis:lastModificationDate",
+              "localName": "cmis:lastModificationDate",
+              "displayName": "cmis:lastModificationDate",
+              "queryName": "cmis:lastModificationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797511997
+            },
+            "cmis:createdBy": {
+              "id": "cmis:createdBy",
+              "localName": "cmis:createdBy",
+              "displayName": "cmis:createdBy",
+              "queryName": "cmis:createdBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:baseTypeId": {
+              "id": "cmis:baseTypeId",
+              "localName": "cmis:baseTypeId",
+              "displayName": "cmis:baseTypeId",
+              "queryName": "cmis:baseTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:parentId": {
+              "id": "cmis:parentId",
+              "localName": "cmis:parentId",
+              "displayName": "cmis:parentId",
+              "queryName": "cmis:parentId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "5599557000360fdd55e33416"
+            },
+            "sap:owner": {
+              "id": "sap:owner",
+              "localName": "sap:owner",
+              "displayName": "sap:owner",
+              "queryName": "sap:owner",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:creationDate": {
+              "id": "cmis:creationDate",
+              "localName": "cmis:creationDate",
+              "displayName": "cmis:creationDate",
+              "queryName": "cmis:creationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797511997
+            },
+            "cmis:changeToken": {
+              "id": "cmis:changeToken",
+              "localName": "cmis:changeToken",
+              "displayName": "cmis:changeToken",
+              "queryName": "cmis:changeToken",
+              "type": "string",
+              "cardinality": "single",
+              "value": "6"
+            }
+          },
+          "exactACL": false
+        }
+      },
+      {
+        "object": {
+          "properties": {
+            "cmis:objectId": {
+              "id": "cmis:objectId",
+              "localName": "cmis:objectId",
+              "displayName": "cmis:objectId",
+              "queryName": "cmis:objectId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "pGUALPxcPNNbboMm6Kde7XqhLfjM6QSjPBp_TamkEtg"
+            },
+            "sap:parentIds": {
+              "id": "sap:parentIds",
+              "localName": "sap:parentIds",
+              "displayName": "sap:parentIds",
+              "queryName": "sap:parentIds",
+              "type": "id",
+              "cardinality": "multi",
+              "value": [
+                "5599557000360fdd55e33416"
+              ]
+            },
+            "cmis:name": {
+              "id": "cmis:name",
+              "localName": "cmis:name",
+              "displayName": "cmis:name",
+              "queryName": "cmis:name",
+              "type": "string",
+              "cardinality": "single",
+              "value": "Cuentas Nacionales"
+            },
+            "cmis:lastModifiedBy": {
+              "id": "cmis:lastModifiedBy",
+              "localName": "cmis:lastModifiedBy",
+              "displayName": "cmis:lastModifiedBy",
+              "queryName": "cmis:lastModifiedBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:objectTypeId": {
+              "id": "cmis:objectTypeId",
+              "localName": "cmis:objectTypeId",
+              "displayName": "cmis:objectTypeId",
+              "queryName": "cmis:objectTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:lastModificationDate": {
+              "id": "cmis:lastModificationDate",
+              "localName": "cmis:lastModificationDate",
+              "displayName": "cmis:lastModificationDate",
+              "queryName": "cmis:lastModificationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797499366
+            },
+            "cmis:createdBy": {
+              "id": "cmis:createdBy",
+              "localName": "cmis:createdBy",
+              "displayName": "cmis:createdBy",
+              "queryName": "cmis:createdBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:baseTypeId": {
+              "id": "cmis:baseTypeId",
+              "localName": "cmis:baseTypeId",
+              "displayName": "cmis:baseTypeId",
+              "queryName": "cmis:baseTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:parentId": {
+              "id": "cmis:parentId",
+              "localName": "cmis:parentId",
+              "displayName": "cmis:parentId",
+              "queryName": "cmis:parentId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "5599557000360fdd55e33416"
+            },
+            "sap:owner": {
+              "id": "sap:owner",
+              "localName": "sap:owner",
+              "displayName": "sap:owner",
+              "queryName": "sap:owner",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:creationDate": {
+              "id": "cmis:creationDate",
+              "localName": "cmis:creationDate",
+              "displayName": "cmis:creationDate",
+              "queryName": "cmis:creationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797499366
+            },
+            "cmis:changeToken": {
+              "id": "cmis:changeToken",
+              "localName": "cmis:changeToken",
+              "displayName": "cmis:changeToken",
+              "queryName": "cmis:changeToken",
+              "type": "string",
+              "cardinality": "single",
+              "value": "6"
+            }
+          },
+          "exactACL": false
+        }
+      },
+      {
+        "object": {
+          "properties": {
+            "cmis:objectId": {
+              "id": "cmis:objectId",
+              "localName": "cmis:objectId",
+              "displayName": "cmis:objectId",
+              "queryName": "cmis:objectId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "L81533zJhFTVWabIsIrLS7icFO0dp9nbEAugWdMA3gE"
+            },
+            "sap:parentIds": {
+              "id": "sap:parentIds",
+              "localName": "sap:parentIds",
+              "displayName": "sap:parentIds",
+              "queryName": "sap:parentIds",
+              "type": "id",
+              "cardinality": "multi",
+              "value": [
+                "5599557000360fdd55e33416"
+              ]
+            },
+            "cmis:name": {
+              "id": "cmis:name",
+              "localName": "cmis:name",
+              "displayName": "cmis:name",
+              "queryName": "cmis:name",
+              "type": "string",
+              "cardinality": "single",
+              "value": "Industriales"
+            },
+            "cmis:lastModifiedBy": {
+              "id": "cmis:lastModifiedBy",
+              "localName": "cmis:lastModifiedBy",
+              "displayName": "cmis:lastModifiedBy",
+              "queryName": "cmis:lastModifiedBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:objectTypeId": {
+              "id": "cmis:objectTypeId",
+              "localName": "cmis:objectTypeId",
+              "displayName": "cmis:objectTypeId",
+              "queryName": "cmis:objectTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:lastModificationDate": {
+              "id": "cmis:lastModificationDate",
+              "localName": "cmis:lastModificationDate",
+              "displayName": "cmis:lastModificationDate",
+              "queryName": "cmis:lastModificationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797524006
+            },
+            "cmis:createdBy": {
+              "id": "cmis:createdBy",
+              "localName": "cmis:createdBy",
+              "displayName": "cmis:createdBy",
+              "queryName": "cmis:createdBy",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:baseTypeId": {
+              "id": "cmis:baseTypeId",
+              "localName": "cmis:baseTypeId",
+              "displayName": "cmis:baseTypeId",
+              "queryName": "cmis:baseTypeId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "cmis:folder"
+            },
+            "cmis:parentId": {
+              "id": "cmis:parentId",
+              "localName": "cmis:parentId",
+              "displayName": "cmis:parentId",
+              "queryName": "cmis:parentId",
+              "type": "id",
+              "cardinality": "single",
+              "value": "5599557000360fdd55e33416"
+            },
+            "sap:owner": {
+              "id": "sap:owner",
+              "localName": "sap:owner",
+              "displayName": "sap:owner",
+              "queryName": "sap:owner",
+              "type": "string",
+              "cardinality": "single",
+              "value": "adrian.schivo@softtek.com"
+            },
+            "cmis:creationDate": {
+              "id": "cmis:creationDate",
+              "localName": "cmis:creationDate",
+              "displayName": "cmis:creationDate",
+              "queryName": "cmis:creationDate",
+              "type": "datetime",
+              "cardinality": "single",
+              "value": 1631797524006
+            },
+            "cmis:changeToken": {
+              "id": "cmis:changeToken",
+              "localName": "cmis:changeToken",
+              "displayName": "cmis:changeToken",
+              "queryName": "cmis:changeToken",
+              "type": "string",
+              "cardinality": "single",
+              "value": "6"
+            }
+          },
+          "exactACL": false
+        }
+      }
+    ],
+    "hasMoreItems": false
+  }

@@ -1,0 +1,2021 @@
+{
+    "objects": [
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "tZeVHyO-crKFOtTkPbKJX6VoRGjIUufp7lCZ3fbO1TE"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/2137951721_1632498300\/121-63ff-cfabec5e-3bfc-433c-8062-33e200cb4bd4"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "image\/png"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632498742640
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "minions_PNG85.png"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632498788088_minions_PNG85.png"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632498742640
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 480910
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "aEcRqdWl6WuEts6dovzx5DuWkva6tjjPOFsLGH485p8"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/1014493649_1632502800\/121-6404-9219e2f7-6dc6-406f-9983-a2b59d7ff75c"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "image\/png"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632502836585
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "minions_PNG85.png"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632502882060_minions_PNG85.png"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632502836585
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 480910
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "KMIuG6UZnlFCf9b1ORkPx5EZwCUOckLM-MFT_aLMk5w"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1853277624_1632749400\/121-6516-e5cceafc-6fa7-4283-a809-5023578ca4d7"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "image\/png"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632749992820
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "minions_PNG85.png"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632750039529_minions_PNG85.png"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632749992820
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 480910
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "wknZVOLFOOyOu21mGpVxHsMoTLvEAZU1fNtNXjzoNT4"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1035970302_1632753000\/121-651a-4972025d-e178-40d9-9be3-0d8a30c110b4"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "image\/png"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632753015796
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "minions_PNG85.png"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632753061690_minions_PNG85.png"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632753015796
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 480910
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "sd_153NF0AmC5Ii1fZJ5wuHXJoDT-nk9-T1MgyY3fWg"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/1318481456_1632753900\/121-651b-995875af-d535-4b76-a6ce-2aefa2978214"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "application\/pdf"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632753955648
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Documento_PDF_02.pdf"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632754003408_Documento_PDF_02.pdf"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632753955648
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 35417
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "KPB1AormJ8CUp1R40yyrdu67JBYki3slFjvk2IDAZwc"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/2137951722_1632757500\/121-651f-7fe3afd2-9a66-4dd0-84a2-faf50232f7b2"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "text\/plain"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632758044394
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Informacion.txt"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632758091827_Informacion.txt"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632758044394
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 31
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "I4ugjgurBx-vFzNCMe9cpM_f1UmWBpiyvqz7OLng8r0"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-520600474_1632764700\/121-6527-a5863e15-a772-4f07-8711-d2b7837f8a1a"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "text\/plain"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632765290666
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Anexo_Documento2.txt"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632765338390_Anexo_Documento2.txt"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632765290666
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 28
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "J8fyrZWc23BFcjbaFRFxbVYDUSyS0fDlH8qI9mbK7Yo"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-2057123095_1632767400\/121-652a-83922aae-5799-4a30-8863-d22476b417a2"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "text\/plain"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632768181834
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Informacion.txt"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632768139954_Informacion.txt"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632768181834
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 31
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "CT_MMyo77F2oc4drOIdmZ4INc2By56Jmb3ko0DqjtqA"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1239062109_1632771000\/121-652e-e95fe72c-2e68-49ec-b396-3b706018bcdd"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632771366227
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "documento_excel.xlsx"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632771413559_documento_excel.xlsx"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632771366227
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 8396
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "CMjBrC7sNhrOnXTGXm5uf1gdIwis_VYOhQumjVh0R84"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-832985344_1632772800\/121-6530-5cc094b3-8012-4d35-9b5f-ec4dd46d37bb"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "text\/plain"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632773472358
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Informacion.txt"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632773520333_Informacion.txt"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632773472358
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 31
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "0aM0fL8zvsGvrs4cLa-QnNrxHJT8RZBS_Y0-gUBCDcM"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1135863803_1632915900\/121-65cf-627f2782-6569-462a-9407-81dce50605b5"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "image\/png"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632915925017
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "minions_PNG85.png"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632915972299_minions_PNG85.png"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632915925017
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 480910
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "HizsWoIWWV2afbhvQAxwli2fS6smo1BhzcKdPjw6Eyw"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1135863803_1632915900\/121-65cf-14a9f1f0-84ae-49b9-a6ef-b581b242a781"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "application\/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632916178985
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "documento_excel.xlsx"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632916227635_documento_excel.xlsx"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632916178985
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 8396
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "WoEr9vRapdbKEw5RrJ4JhK8JQPcqNw3uEzvcAn5jEhY"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-1135863803_1632915900\/121-65cf-6660d17d-fa75-445e-a9a7-bd7605bd70ae"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "text\/plain"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632916216177
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Anexo_Documento2.txt"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632916264346_Anexo_Documento2.txt"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632916216177
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 28
+                    }
+                },
+                "exactACL": false
+            }
+        },
+        {
+            "object": {
+                "properties": {
+                    "cmis:objectId": {
+                        "id": "cmis:objectId",
+                        "localName": "cmis:objectId",
+                        "displayName": "cmis:objectId",
+                        "queryName": "cmis:objectId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "KC74CWVFajfpv7M3Z_hu-hAWR4GIbFyYxxB6Dwlnzr4"
+                    },
+                    "cmis:lastModifiedBy": {
+                        "id": "cmis:lastModifiedBy",
+                        "localName": "cmis:lastModifiedBy",
+                        "displayName": "cmis:lastModifiedBy",
+                        "queryName": "cmis:lastModifiedBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:contentStreamId": {
+                        "id": "cmis:contentStreamId",
+                        "localName": "cmis:contentStreamId",
+                        "displayName": "cmis:contentStreamId",
+                        "queryName": "cmis:contentStreamId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "5eb91450626c5600068a1291\/dbc_cdf1e570000126b1a84ec416_614ce48a1b621000075e1fde\/-318457917_1632919500\/121-65d3-879864bb-0f7b-485b-ad4c-fb4b1876b53a"
+                    },
+                    "cmis:objectTypeId": {
+                        "id": "cmis:objectTypeId",
+                        "localName": "cmis:objectTypeId",
+                        "displayName": "cmis:objectTypeId",
+                        "queryName": "cmis:objectTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "cmis:contentStreamMimeType": {
+                        "id": "cmis:contentStreamMimeType",
+                        "localName": "cmis:contentStreamMimeType",
+                        "displayName": "cmis:contentStreamMimeType",
+                        "queryName": "cmis:contentStreamMimeType",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "application\/pdf"
+                    },
+                    "cmis:createdBy": {
+                        "id": "cmis:createdBy",
+                        "localName": "cmis:createdBy",
+                        "displayName": "cmis:createdBy",
+                        "queryName": "cmis:createdBy",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:baseTypeId": {
+                        "id": "cmis:baseTypeId",
+                        "localName": "cmis:baseTypeId",
+                        "displayName": "cmis:baseTypeId",
+                        "queryName": "cmis:baseTypeId",
+                        "type": "id",
+                        "cardinality": "single",
+                        "value": "cmis:document"
+                    },
+                    "sap:owner": {
+                        "id": "sap:owner",
+                        "localName": "sap:owner",
+                        "displayName": "sap:owner",
+                        "queryName": "sap:owner",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "sb-ea430bd2-5c5f-49a7-80f0-7b767ab748f7!b94122|sdm-di-SDM_DI_PROD-prod!b41064"
+                    },
+                    "cmis:creationDate": {
+                        "id": "cmis:creationDate",
+                        "localName": "cmis:creationDate",
+                        "displayName": "cmis:creationDate",
+                        "queryName": "cmis:creationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632920278145
+                    },
+                    "cmis:changeToken": {
+                        "id": "cmis:changeToken",
+                        "localName": "cmis:changeToken",
+                        "displayName": "cmis:changeToken",
+                        "queryName": "cmis:changeToken",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "0"
+                    },
+                    "cmis:contentStreamFileName": {
+                        "id": "cmis:contentStreamFileName",
+                        "localName": "cmis:contentStreamFileName",
+                        "displayName": "cmis:contentStreamFileName",
+                        "queryName": "cmis:contentStreamFileName",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "Un documento pdf.pdf"
+                    },
+                    "sap:parentIds": {
+                        "id": "sap:parentIds",
+                        "localName": "sap:parentIds",
+                        "displayName": "sap:parentIds",
+                        "queryName": "sap:parentIds",
+                        "type": "id",
+                        "cardinality": "multi",
+                        "value": [
+                            "cdf1e570000126b1a84ec416"
+                        ]
+                    },
+                    "cmis:name": {
+                        "id": "cmis:name",
+                        "localName": "cmis:name",
+                        "displayName": "cmis:name",
+                        "queryName": "cmis:name",
+                        "type": "string",
+                        "cardinality": "single",
+                        "value": "1632920325578_Un documento pdf.pdf"
+                    },
+                    "cmis:lastModificationDate": {
+                        "id": "cmis:lastModificationDate",
+                        "localName": "cmis:lastModificationDate",
+                        "displayName": "cmis:lastModificationDate",
+                        "queryName": "cmis:lastModificationDate",
+                        "type": "datetime",
+                        "cardinality": "single",
+                        "value": 1632920278145
+                    },
+                    "cmis:contentStreamLength": {
+                        "id": "cmis:contentStreamLength",
+                        "localName": "cmis:contentStreamLength",
+                        "displayName": "cmis:contentStreamLength",
+                        "queryName": "cmis:contentStreamLength",
+                        "type": "integer",
+                        "cardinality": "single",
+                        "value": 392590
+                    }
+                },
+                "exactACL": false
+            }
+        }
+    ],
+    "hasMoreItems": false
+}

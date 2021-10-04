@@ -7,22 +7,77 @@
     xmlns:semantic="sap.f.semantic">
 
     <semantic:SemanticPage
-        id="page"
+        id="page1"
         headerPinnable="false"
         toggleHeaderOnTitleClick="false">
 
         <semantic:titleHeading>
-            <Title text="Title Heading Here" />
+            <Title text="{viewModel>/repositoryDescription}" />
         </semantic:titleHeading>
 
-
         <semantic:headerContent>
-            <Text text="Header Content Here" />
+            <!--    
+            <Text text="{viewModel>/repositoryName}" />
+            -->
         </semantic:headerContent>
 
-    
         <semantic:content>
-           <Text text="Semantic Content Here" />
+            <Table items="{folderModel>/objects}" headerText="" mode="Delete" >
+
+                <headerToolbar>
+					<OverflowToolbar id="idCrumbToolbar" >
+						<Breadcrumbs id="breadcrumb" />
+                        <ToolbarSpacer/>
+                        <Button text="{i18n>newfolder}" />
+                        <Button text="{i18n>newfile}" />
+					</OverflowToolbar>
+				</headerToolbar>
+
+                <columns>
+                    <Column width="5em"> <Text text="{i18n>tipo}"/> </Column>
+                    <Column> <Text text="{i18n>nombre}"/> </Column>
+                    <Column> <Text text="{i18n>modificado}"/> </Column>
+                    <Column> <Text text="{i18n>modificadoPor}"/> </Column>
+                    <Column hAlign="Begin"> <Text text="{i18n>size}"/> </Column>
+                    <Column visible="false"> <Text text="objectId"/> </Column>
+                    <Column visible="false"> <Text text="parentId"/> </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem type="Active" press=".onPress">
+                        <cells>
+                            <ObjectStatus 
+                                class="sapMObjectStatusLarge" 
+                                icon="{ 
+                                    parts: [
+                                        { path: 'folderModel>object/properties/cmis:name/value' },
+                                        { path: 'folderModel>object/properties/cmis:objectTypeId/value' }
+                                    ],
+                                    formatter: '.formatter.formatObjectType'
+                                }"
+                                state="Information" 
+                            />
+                            <Text text="{folderModel>object/properties/cmis:name/value}" />
+                            <Text text="{
+                                path: 'folderModel>object/properties/cmis:lastModificationDate/value',
+                                formatter: '.formatter.formatMSDate'
+                            }" />
+                            <Text text="{folderModel>object/properties/cmis:lastModifiedBy/value}" />
+                            <ObjectNumber visible="{
+                                path: 'folderModel>object/properties/cmis:objectTypeId/value',
+                                formatter: '.formatter.sizeVisible'
+                                }"
+                                number="{folderModel>object/properties/cmis:contentStreamLength/value}" 
+                                unit="Bytes"/>
+                            
+                            <Text text="{folderModel>object/properties/cmis:objectId/value}" />
+                            <Text text="{folderModel>object/properties/sap:parentIds/value}" />
+                        </cells>        
+                    </ColumnListItem>
+                </items>
+
+           </Table>
+
         </semantic:content>
 
 
