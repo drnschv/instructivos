@@ -9,11 +9,7 @@
       "cwd": "${workspaceFolder}",
       "windows": {
         "runtimeExecutable": "npm.cmd",
-        "args": [
-          "--",
-          "--backendConfig",
-          "\"[{\\\"path\\\":\\\"/sap\\\",\\\"destination\\\":\\\"SDM_API\\\"}]\""
-        ]
+        "args": []
       },
       "runtimeArgs": [
         "run-script",
@@ -26,11 +22,7 @@
         "DEBUG": "--inspect",
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
       },
-      "args": [
-        "--",
-        "--backendConfig",
-        "[{\"path\":\"/sap\",\"destination\":\"SDM_API\"}]"
-      ]
+      "args": []
     },
     {
       "name": "Start instructivos Mock",
@@ -40,11 +32,7 @@
       "runtimeExecutable": "npm",
       "windows": {
         "runtimeExecutable": "npm.cmd",
-        "args": [
-          "--",
-          "--backendConfig",
-          "\"[{\\\"path\\\":\\\"/sap\\\",\\\"destination\\\":\\\"SDM_API\\\"}]\""
-        ]
+        "args": []
       },
       "runtimeArgs": [
         "run-script",
@@ -56,11 +44,7 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
       },
-      "args": [
-        "--",
-        "--backendConfig",
-        "[{\"path\":\"/sap\",\"destination\":\"SDM_API\"}]"
-      ]
+      "args": []
     },
     {
       "name": "Start instructivos Local",
@@ -80,7 +64,8 @@
       "port": 9229,
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
-      }
+      },
+      "envFile": "${workspaceFolder}/.env1"
     }
   ],
   "inputs": [

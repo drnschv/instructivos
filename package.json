@@ -41,5 +41,9 @@
             "ui5-task-zipper",
             "mbt"
         ]
+    },
+    "dependencies": {
+        "@sap/approuter": "^10.8.0",
+        "@sap/html5-repo-mock": "^2.1.0"
     }
 }
