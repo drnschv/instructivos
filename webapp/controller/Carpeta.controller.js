@@ -139,11 +139,13 @@ sap.ui.define([
 
 
         getData: function (path) {
-            //var url = this.getDMSUrl("/SDM_API/browser");
-            //var fullUrl = path ? url + "/" + path : url;
-            //return $.get({url: fullUrl});
+            var url = this.getDMSUrl("/SDM_API/browser");
+            var fullUrl = path ? url + "/" + path : url;
+            return $.get({url: fullUrl});
 
-            return new Promise(function (resolve, reject) {
+/**
+ * 
+             return new Promise(function (resolve, reject) {
                 
                 var oResponse = new sap.ui.model.json.JSONModel();
                 oResponse.attachRequestCompleted(function() {
@@ -162,6 +164,7 @@ sap.ui.define([
 
             });
 
+ */
 
         },
 
