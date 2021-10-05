@@ -39,18 +39,26 @@ sap.ui.define([
            
 		},
 
+        onUpdateStarted: function (oEvent) {
+            //var oTable = this.byId("tableContent");
+            //var oItems = oTable.getBinding("items");
+			//var oBindingPath = table.getModel().getProperty("/object/properties/cmis:objectTypeId/value");
+			//var oSorter = new Sorter(oBindingPath);
+			//oItems.sort(oSorter);
+
+        },
+
+
 		onPress : function (oEvent) {
             var oContext = oEvent.getSource().getBindingContext("folderModel");
             var name = this.getCmisObjectName(oContext);
             var objectType = this.getCmisObjectType(oContext);
             var objectId = this.getCmisObjectId(oContext);
-            //sap.m.MessageToast.show(name + " - " + objectType + " - " + objectId);
 
             if (objectType === "cmis:folder") {
                 this.addBreadcumbPath(name);
                 var sPath = this.getCurrentFullPath();
                 this.getFolderObjects(sPath);
-                //sap.m.MessageToast.show(sPath);
             } else if (objectType === "cmis:document") {
                 //sap.m.MessageToast.show("Document");
                 //download document
@@ -72,7 +80,6 @@ sap.ui.define([
 			} 
             var sPath = this.getCurrentFullPath();
             this.getFolderObjects(sPath);
-            sap.m.MessageToast.show(sPath); 
 
 		},
 
@@ -143,7 +150,44 @@ sap.ui.define([
             var fullUrl = path ? url + "/" + path : url;
             return $.get({url: fullUrl});
 
-/**
+        },
+
+        setRepoUrl: function () {
+            var sRepositoryName = this.getView().getModel("viewModel").getProperty("/repositoryName"); 
+            var that = this;
+            this.getData("").then(response => {
+                var repos = Object.keys(response).filter(repo => response[repo].repositoryName == sRepositoryName);
+                var root = repos[0] + "/root";
+                var url = this.getDMSUrl("/SDM_API/browser/" + root);
+                //
+                that.getView().getModel("viewModel").setProperty("/rootUrl", url);
+                that.getView().getModel("viewModel").setProperty("/rootFolderPath", root);
+                that.getView().getModel("viewModel").setProperty("/repositoryId", response[repos[0]].repositoryId);
+                that.getView().getModel("viewModel").setProperty("/repositoryName", response[repos[0]].repositoryName);
+                that.getView().getModel("viewModel").setProperty("/repositoryDescription", response[repos[0]].repositoryDescription);
+                that.getFolderObjects(root);  
+            });
+
+        },
+
+        getFolderObjects: function (sPath) {
+            var that = this;
+            this.getData(sPath).then(response => {
+                that.getView().getModel("folderModel").setData(response);
+            })
+        },
+
+
+        
+
+		
+
+	});
+});
+
+
+
+/*
  * 
              return new Promise(function (resolve, reject) {
                 
@@ -164,38 +208,7 @@ sap.ui.define([
 
             });
 
- */
-
-        },
-
-        setRepoUrl: function () {
-            var sRepositoryName = this.getView().getModel("viewModel").getProperty("/repositoryName"); 
-            var that = this;
-            this.getData("").then(response => {
-                var repos = Object.keys(response).filter(repo => response[repo].repositoryName == sRepositoryName);
-                var root = repos[0] + "/root";
-                var url = this.getDMSUrl("/SDM_API/browser/" + root);
-                //
-                that.getView().getModel("viewModel").setProperty("/rootUrl", url);
-                that.getView().getModel("viewModel").setProperty("/rootFolderPath", root);
-                //that.getView().getModel("viewModel").setProperty("/currentPath", root);
-                that.getView().getModel("viewModel").setProperty("/repositoryId", response[repos[0]].repositoryId);
-                that.getView().getModel("viewModel").setProperty("/repositoryName", response[repos[0]].repositoryName);
-                that.getView().getModel("viewModel").setProperty("/repositoryDescription", response[repos[0]].repositoryDescription);
-                that.getFolderObjects(root);  
-            });
-
-        },
-
-        getFolderObjects: function (sPath) {
-            var that = this;
-            this.getData(sPath).then(response => {
-                that.getView().getModel("folderModel").setData(response);
-            })
-        },
-
-
-        //getAdjuntos: function (oResponse) {
+//getAdjuntos: function (oResponse) {
         //    var aObjects = [];
         //    for(var i=0; i < oResponse.objects.length; i++) {
         //        var oFolderContent = {};
@@ -209,7 +222,4 @@ sap.ui.define([
         //},
 
 
-		
-
-	});
-});
+ */

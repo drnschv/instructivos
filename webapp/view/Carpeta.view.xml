@@ -22,7 +22,19 @@
         </semantic:headerContent>
 
         <semantic:content>
-            <Table items="{folderModel>/objects}" headerText="" mode="Delete" >
+            <Table id="tableContent"
+                showSeparators="Inner" 
+                updateStarted=".onUpdateStarted" 
+                headerText="" 
+                mode="Delete" 
+                items="{
+                    path: 'folderModel>/objects',
+                    sorter: {
+                        path: 'folderModel>object/properties/cmis:objectTypeId/value',
+                        descending: true
+                    }
+                }" 
+            >
 
                 <headerToolbar>
 					<OverflowToolbar id="idCrumbToolbar" >
