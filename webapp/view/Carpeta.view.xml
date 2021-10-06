@@ -40,8 +40,14 @@
 					<OverflowToolbar id="idCrumbToolbar" >
 						<Breadcrumbs id="breadcrumb" />
                         <ToolbarSpacer/>
-                        <Button text="{i18n>newfolder}" />
-                        <Button text="{i18n>newfile}" />
+                        <MenuButton text="{i18n>crearTxt}" icon="sap-icon://add">
+                        	<menu>
+                                <Menu itemSelected="onMenuAction">
+                                    <MenuItem text="{i18n>newfolder}" icon="sap-icon://add-folder" />
+                                    <MenuItem text="{i18n>newfile}" icon="sap-icon://add-document" />
+                                </Menu>
+                            </menu>
+                        </MenuButton>
 					</OverflowToolbar>
 				</headerToolbar>
 
@@ -92,6 +98,9 @@
 
         </semantic:content>
 
+        <semantic:titleCustomTextActions>
+       
+        </semantic:titleCustomTextActions>
 
     </semantic:SemanticPage>
 

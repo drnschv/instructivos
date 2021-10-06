@@ -3,9 +3,8 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
     "sap/m/Link",
-	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator"
-], function (Controller, JSONModel, formatter, Link, Filter, FilterOperator) {
+    "sap/m/MenuItem"
+], function (Controller, JSONModel, formatter, Link, MenuItem) {
 	"use strict";
 
 	return Controller.extend("profertil.instructivos.controller.Carpeta", {
@@ -29,7 +28,7 @@ sap.ui.define([
                 rootFolderPath: "",
                 repositoryId: "",
                 repositoryName: sPath,
-                repositoryDescription: "",
+                repositoryDescription: "Carpetas",
 			});
 			this.getView().setModel(oViewModel, "viewModel");
             
@@ -38,6 +37,28 @@ sap.ui.define([
             this.addBreadcumbPath(sPath);
            
 		},
+
+
+        onMenuAction: function (oEvent) {
+            var oItem = oEvent.getParameter("item");
+			var sItemPath = "";
+            while (oItem instanceof MenuItem) {
+                sItemPath = oItem.getText() + " > " + sItemPath;
+                oItem = oItem.getParent();
+            }
+            sItemPath = sItemPath.substr(0, sItemPath.lastIndexOf(" > "));
+            //sap.m.MessageToast.show("Seleccion: " + sItemPath);
+            var sNewFolder = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfolder");
+            var sNewFile = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfile");
+            if (sItemPath === sNewFolder) {
+                sap.m.MessageToast.show("new Folder");
+            }
+
+            if (sItemPath === sNewFile) {
+                sap.m.MessageToast.show("new File");
+            }
+
+        },
 
         onUpdateStarted: function (oEvent) {
             //var oTable = this.byId("tableContent");
@@ -139,6 +160,76 @@ sap.ui.define([
             this.getView().setModel(oModel, "folderModel");
         },
 
+
+
+        //
+        //
+        //
+        createFolder: function (foldername, path) {
+            var data = new FormData();
+            var dataObject = {
+                "cmisaction": "createFolder",
+                "propertyId[0]": "cmis:name",
+                "propertyId[1]": "cmis:objectTypeId",
+                "propertyValue[0]": foldername,
+                "propertyValue[1]": "cmis:folder"
+            };
+
+            var keys = Object.keys(dataObject);
+
+            for (var key of keys) {
+                data.append(key, dataObject[key]);
+            }
+
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            return $.ajax({
+                url: sDmsUrl + (!path ? "" : path),
+                type: "POST",
+                data: data,
+                contentType: false,
+                processData: false
+            });
+        },
+
+        deleteFolderTree: function (sRepoId, sFolderId) {
+            var data = new FormData();
+            var dataObject = {
+                "cmisaction": "deleteTree",
+                "propertyId[0]": "cmis:repositoryId",
+                "propertyValue[0]": sRepoId,                
+                "propertyId[1]": "cmis:folderId",
+                "propertyValue[1]": sFolderId,
+            };
+
+            var keys = Object.keys(dataObject);
+
+            for (var key of keys) {
+                data.append(key, dataObject[key]);
+            }
+
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            $.ajax({
+                url: sDmsUrl + path,
+                type: "POST",  //es DELETE ? 
+                data: data,
+                contentType: false,
+                processData: false
+            });
+        },
+
+
+
+
+        //
+        //
+        //
+        getFolderObjects: function (sPath) {
+            var that = this;
+            this.getData(sPath).then(response => {
+                that.getView().getModel("folderModel").setData(response);
+            })
+        },
+
         getDMSUrl: function (sPath) {
             var sComponent = this.getOwnerComponent().getManifest()["sap.app"]["id"]
             return jQuery.sap.getModulePath(sComponent) + sPath;
@@ -158,7 +249,7 @@ sap.ui.define([
             this.getData("").then(response => {
                 var repos = Object.keys(response).filter(repo => response[repo].repositoryName == sRepositoryName);
                 var root = repos[0] + "/root";
-                var url = this.getDMSUrl("/SDM_API/browser/" + root);
+                var url = this.getDMSUrl("/SDM_API/browser/" + root); //this._dmsUrl=.../browser/<repoId>/root
                 //
                 that.getView().getModel("viewModel").setProperty("/rootUrl", url);
                 that.getView().getModel("viewModel").setProperty("/rootFolderPath", root);
@@ -170,12 +261,7 @@ sap.ui.define([
 
         },
 
-        getFolderObjects: function (sPath) {
-            var that = this;
-            this.getData(sPath).then(response => {
-                that.getView().getModel("folderModel").setData(response);
-            })
-        },
+        
 
 
         
