@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog title="{i18n>crearCarpetaTit}">
+        <content>
+            <Label text="{i18n>nombreCarpetaTxt}" class="sapUiTinyMargin"></Label>
+            <Input 
+                id="carpetaId" 
+                value="{viewModel>/newFolderName}" 
+                placeholder="{i18n>carpetaPlaceHolderTxt}" 
+                width="95%" 
+                class="sapUiTinyMargin">
+            </Input>
+        </content>
+    <beginButton>
+        <Button text="{i18n>crearCarpetaBtn}" type="Emphasized" press=".onCrearCarpeta"></Button>
+    </beginButton>
+    <endButton>
+        <Button text="{i18n>cancelarBtn}" press=".onCancelarCrearCarpeta"></Button>
+    </endButton>
+    </Dialog>
+</core:FragmentDefinition>

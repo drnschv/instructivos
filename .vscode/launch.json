@@ -9,11 +9,7 @@
       "cwd": "${workspaceFolder}",
       "windows": {
         "runtimeExecutable": "npm.cmd",
-        "args": [
-          "--",
-          "--backendConfig",
-          "\"[{\\\"path\\\":\\\"/SDM_API\\\",\\\"destination\\\":\\\"SDM_API\\\"}]\""
-        ]
+        "args": []
       },
       "runtimeArgs": [
         "run-script",
@@ -26,11 +22,7 @@
         "DEBUG": "--inspect",
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
       },
-      "args": [
-        "--",
-        "--backendConfig",
-        "[{\"path\":\"/SDM_API\",\"destination\":\"SDM_API\"}]"
-      ]
+      "args": []
     },
     {
       "name": "Start instructivos Mock",
@@ -61,7 +53,8 @@
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "npm",
       "windows": {
-        "runtimeExecutable": "npm.cmd"
+        "runtimeExecutable": "npm.cmd",
+        "args": []
       },
       "runtimeArgs": [
         "run-script",
@@ -73,27 +66,8 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
       },
-      "envFile": "${workspaceFolder}/.env1"
-    },
-    {
-      "name": "Run A2",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceFolder}/node_modules/@sap/html5-repo-mock/index.js",
-      "args": [
-        "--standalone",
-        "--verbose",
-        "/profertil-instructivos/index.html",
-        "--ui5",
-        "{\"version\":\".\"}"
-      ],
-      "cwd": "${workspaceFolder}",
-      "env": {
-        "PORT": "6004",
-        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
-        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/instructivos\"}"
-      },
-      "envFile": "${workspaceFolder}/.env11"
+      "envFile": "${workspaceFolder}/.env1",
+      "args": []
     }
   ],
   "inputs": [

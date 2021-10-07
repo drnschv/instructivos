@@ -1,0 +1,10 @@
+{
+  "destinations": [
+    {
+      "name": "SDM_API",
+      "proxyHost": "http://127.0.0.1",
+      "proxyPort": "8887",
+      "url": "https://SDM_API.dest"
+    }
+  ]
+}

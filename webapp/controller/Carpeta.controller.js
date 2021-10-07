@@ -3,8 +3,9 @@ sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"../model/formatter",
     "sap/m/Link",
-    "sap/m/MenuItem"
-], function (Controller, JSONModel, formatter, Link, MenuItem) {
+    "sap/m/MenuItem",
+    "sap/ui/core/Fragment"
+], function (Controller, JSONModel, formatter, Link, MenuItem, Fragment) {
 	"use strict";
 
 	return Controller.extend("profertil.instructivos.controller.Carpeta", {
@@ -21,7 +22,6 @@ sap.ui.define([
 		 */
 		onInit : function () {
             var sPath = "PROCEDIMIENTOS_E_INSTRUCTIVOS";
-
 			var oViewModel,			
 			oViewModel = new JSONModel({
                 rootUrl: "",
@@ -29,9 +29,9 @@ sap.ui.define([
                 repositoryId: "",
                 repositoryName: sPath,
                 repositoryDescription: "Carpetas",
+                newFolderName: ""
 			});
-			this.getView().setModel(oViewModel, "viewModel");
-            
+			this.getView().setModel(oViewModel, "viewModel");           
             this.createFolderModel();
             this.setRepoUrl();
             this.addBreadcumbPath(sPath);
@@ -47,11 +47,11 @@ sap.ui.define([
                 oItem = oItem.getParent();
             }
             sItemPath = sItemPath.substr(0, sItemPath.lastIndexOf(" > "));
-            //sap.m.MessageToast.show("Seleccion: " + sItemPath);
             var sNewFolder = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfolder");
             var sNewFile = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfile");
             if (sItemPath === sNewFolder) {
-                sap.m.MessageToast.show("new Folder");
+                //sap.m.MessageToast.show("new Folder");
+                this.onCreateFolder();
             }
 
             if (sItemPath === sNewFile) {
@@ -59,6 +59,38 @@ sap.ui.define([
             }
 
         },
+
+        onCreateFolder: function () {
+            if (!this._oCrearCarpeta) {
+                Fragment.load({
+                    type: "XML",
+                    controller: this,
+                    name: 'profertil.instructivos.view.CrearCarpeta'
+                }).then(function(oFragment) {
+                    this._oCrearCarpeta = oFragment;
+                    this.getView().addDependent(this._oCrearCarpeta);
+                    this._oCrearCarpeta.open();
+                }.bind(this));
+            } else {
+                this.getView().getModel("viewModel").setProperty("/newFolderName", "");
+                this._oCrearCarpeta.open();
+            }
+
+        },
+
+        onCrearCarpeta: function (oEvent) {
+            var sPath = this.getBreadcumbPath();
+            var sFolderName = this.getView().getModel("viewModel").getProperty("/newFolderName");
+            sap.m.MessageToast.show(sPath + "-" + sFolderName);
+            this.createFolder(sFolderName, sPath);
+            this.oCreateFolderDialog.close();
+
+        },
+
+        onCancelarCrearCarpeta: function (oEvent) {
+            this._oCrearCarpeta.close();    
+        },
+
 
         onUpdateStarted: function (oEvent) {
             //var oTable = this.byId("tableContent");
@@ -275,6 +307,39 @@ sap.ui.define([
 
 /*
  * 
+   
+   onCreateFolder2: function () {
+            if (!this.oCreateFolderDialog) {
+				this.oCreateFolderDialog = new sap.m.Dialog({
+                    title: "Crear Nueva Carpeta",
+                    class: "sapUiResponsiveMargin",					
+					content: [
+						new sap.m.Label({text: "Nombre de la Carpeta",labelFor: "carpetaName"}),
+						new sap.m.Input("carpetaName", {placeholder: "Nombre de la carpeta"})
+					],
+					beginButton: new sap.m.Button({
+						type: sap.m.ButtonType.Emphasized,
+						text: "Crear",
+						press: function () {
+                            var sPath = this.getBreadcumbPath();
+                            var sFolderName = sap.ui.getCore().byId("carpetaName").getValue();
+                            //sap.m.MessageToast.show(sPath + "-" + sFolderName);
+							this.createFolder(sFolderName, sPath);
+							this.oCreateFolderDialog.close();
+						}.bind(this)
+					}),
+					endButton: new sap.m.Button({
+						text: "Cancelar",
+						press: function () {
+							this.oCreateFolderDialog.close();
+						}.bind(this)
+					})
+				});
+			}
+			this.oCreateFolderDialog.open();
+
+        },
+   
              return new Promise(function (resolve, reject) {
                 
                 var oResponse = new sap.ui.model.json.JSONModel();
