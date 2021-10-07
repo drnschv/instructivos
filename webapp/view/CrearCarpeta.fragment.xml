@@ -13,10 +13,10 @@
             </Input>
         </content>
     <beginButton>
-        <Button text="{i18n>crearCarpetaBtn}" type="Emphasized" press=".onCrearCarpeta"></Button>
+        <Button text="{i18n>crearCarpetaBtn}" type="Emphasized" press=".onPressCrearCarpeta"></Button>
     </beginButton>
     <endButton>
-        <Button text="{i18n>cancelarBtn}" press=".onCancelarCrearCarpeta"></Button>
+        <Button text="{i18n>cancelarBtn}" press=".onPressCancelarCarpeta"></Button>
     </endButton>
     </Dialog>
 </core:FragmentDefinition>

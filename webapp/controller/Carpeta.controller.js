@@ -78,17 +78,33 @@ sap.ui.define([
 
         },
 
-        onCrearCarpeta: function (oEvent) {
+        onPressCrearCarpeta: function (oEvent) {
             var sPath = this.getBreadcumbPath();
             var sFolderName = this.getView().getModel("viewModel").getProperty("/newFolderName");
-            //sap.m.MessageToast.show(sPath + "-" + sFolderName);
-            this.createFolder(sFolderName, sPath);
-            this.oCreateFolderDialog.close();
+            this.createFolder(sFolderName, sPath).then(function (){
+                sap.m.MessageToast.show("Carpeta Creada");
+                this._oCrearCarpeta.close();
+                this.onRefreshContent();
+            }.bind(this));
+            
+        },
+
+        onPressCancelarCarpeta: function (oEvent) {
+            this._oCrearCarpeta.close();    
+        },
+
+        onPressDeleteObject: function (oEvent) {
+            var oContext= oEvent.getParameter("listItem").getBindingContext("folderModel");
+            var objectId = this.getCmisObjectId(oContext);
+            var repositoryId = this.getRepositoryId();
+            this.deleteFolderTree(repositoryId, objectId);
 
         },
 
-        onCancelarCrearCarpeta: function (oEvent) {
-            this._oCrearCarpeta.close();    
+        onRefreshContent: function () {
+            var sPath = this.getCurrentFullPath();
+            this.getFolderObjects(sPath);
+
         },
 
 
@@ -169,18 +185,25 @@ sap.ui.define([
 			return oBreadCrumb.getLinks();
         },
 
+        getRepositoryId: function () {
+            return this.getView().getModel("viewModel").getProperty("/repositoryId");
+        },
+
         getCmisObjectName: function (oContext) {
             return this.getCmisObjectValue(oContext, "cmis:name");
         },
         getCmisObjectId: function (oContext) {
             return this.getCmisObjectValue(oContext, "cmis:objectId");
         },
+
         getCmisObjectType: function (oContext) {
             return this.getCmisObjectValue(oContext, "cmis:objectTypeId");
-        },                                            
+        },   
+
         getCmisParentId: function (oContext) {
             return this.getCmisObjectValue(oContext, "sap:parentIds");
-        },        
+        },  
+
         getCmisObjectValue: function (oContext, sTag) {
             var sPath=oContext.getPath();
             var oCmisObject = oContext.getProperty(sPath); 
@@ -221,12 +244,13 @@ sap.ui.define([
                 contentType: false,
                 processData: false
             });
+
         },
 
         deleteFolderTree: function (sRepoId, sFolderId) {
             var data = new FormData();
             var dataObject = {
-                "cmisaction": "deleteTree",
+                "cmisAction": "deleteTree",
                 "propertyId[0]": "cmis:repositoryId",
                 "propertyValue[0]": sRepoId,                
                 "propertyId[1]": "cmis:folderId",
@@ -240,13 +264,14 @@ sap.ui.define([
             }
 
             var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
-            $.ajax({
-                url: sDmsUrl + path,
+            return $.ajax({
+                url: sDmsUrls,
                 type: "POST",  //es DELETE ? 
                 data: data,
                 contentType: false,
                 processData: false
             });
+
         },
 
 
@@ -291,14 +316,10 @@ sap.ui.define([
                 that.getFolderObjects(root);  
             });
 
-        },
-
-        
+        },  
 
 
         
-
-		
 
 	});
 });
