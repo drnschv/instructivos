@@ -266,7 +266,7 @@ sap.ui.define([
             var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
             return $.ajax({
                 url: sDmsUrl,
-                type: "POST",  //es DELETE ? 
+                type: "POST",   
                 data: data,
                 contentType: false,
                 processData: false
