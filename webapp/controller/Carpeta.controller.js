@@ -4,8 +4,9 @@ sap.ui.define([
 	"../model/formatter",
     "sap/m/Link",
     "sap/m/MenuItem",
-    "sap/ui/core/Fragment"
-], function (Controller, JSONModel, formatter, Link, MenuItem, Fragment) {
+    "sap/ui/core/Fragment",
+    "sap/m/MessageBox"
+], function (Controller, JSONModel, formatter, Link, MenuItem, Fragment, MessageBox) {
 	"use strict";
 
 	return Controller.extend("profertil.instructivos.controller.Carpeta", {
@@ -95,8 +96,20 @@ sap.ui.define([
 
         onPressDeleteObject: function (oEvent) {
             var oContext= oEvent.getParameter("listItem").getBindingContext("folderModel");
+            MessageBox.warning("Desea eliminar el objeto?", {
+				actions: ["Eliminar", "Cancelar"],
+	            initialFocus: "Cancelar",
+				onClose: function (sAction) {
+					if (sAction === "Eliminar") {
+                        this.deleteCmisfolder(oContext);
+                    }
+				}.bind(this)
+			});
+
+        },
+
+        deleteCmisfolder: function (oContext) {
             var objectId = this.getCmisObjectId(oContext);
-            var repositoryId = this.getRepositoryId();
             this.deleteFolderTree(objectId).then(function () {
                 sap.m.MessageToast.show("Objeto Eliminado");
                 this.onRefreshContent();
