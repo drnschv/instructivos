@@ -97,7 +97,12 @@ sap.ui.define([
             var oContext= oEvent.getParameter("listItem").getBindingContext("folderModel");
             var objectId = this.getCmisObjectId(oContext);
             var repositoryId = this.getRepositoryId();
-            this.deleteFolderTree(repositoryId, objectId);
+            this.deleteFolderTree(objectId).then(function () {
+                sap.m.MessageToast.show("Objeto Eliminado");
+                this.onRefreshContent();
+            }.bind(this)).catch(function () {
+                sap.m.MessageToast.show("Error al intentar eliminar el objeto. Intente mas tarde")
+            }.bind(this));
 
         },
 
@@ -247,14 +252,12 @@ sap.ui.define([
 
         },
 
-        deleteFolderTree: function (sRepoId, sFolderId) {
+        deleteFolderTree: function (sFolderId) {
             var data = new FormData();
             var dataObject = {
-                "cmisAction": "deleteTree",
-                "propertyId[0]": "cmis:repositoryId",
-                "propertyValue[0]": sRepoId,                
-                "propertyId[1]": "cmis:folderId",
-                "propertyValue[1]": sFolderId,
+                "cmisaction": "deleteTree",
+                "continueOnFailure": false,              
+                "objectId": sFolderId
             };
 
             var keys = Object.keys(dataObject);
