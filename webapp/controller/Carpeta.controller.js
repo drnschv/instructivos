@@ -81,7 +81,7 @@ sap.ui.define([
         onCrearCarpeta: function (oEvent) {
             var sPath = this.getBreadcumbPath();
             var sFolderName = this.getView().getModel("viewModel").getProperty("/newFolderName");
-            sap.m.MessageToast.show(sPath + "-" + sFolderName);
+            //sap.m.MessageToast.show(sPath + "-" + sFolderName);
             this.createFolder(sFolderName, sPath);
             this.oCreateFolderDialog.close();
 
