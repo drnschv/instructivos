@@ -11,6 +11,10 @@ server:
       backend:
       - path: /sap/opu/odata
         url: http://localhost
+      - path: /SDM_API/browser
+        pathPrefix: /browser
+        url: https://SDM_API.dest:443
+        destination: SDM_API
       ui5:
         path: 
         - /resources

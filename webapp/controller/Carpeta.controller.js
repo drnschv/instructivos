@@ -135,7 +135,7 @@ sap.ui.define([
 
         },
 
-
+        // press en una carpeta o archivo
 		onPress : function (oEvent) {
             var oContext = oEvent.getSource().getBindingContext("folderModel");
             var name = this.getCmisObjectName(oContext);
@@ -155,6 +155,7 @@ sap.ui.define([
 
 		},
         
+        // press en el breadcumb path
         onBreadcrumbPress: function (oEvent, sLinkText) {
 			var oLink = oEvent.getSource();
 			var oBreadCrumb = this.byId("breadcrumb");
@@ -169,6 +170,24 @@ sap.ui.define([
             this.getFolderObjects(sPath);
 
 		},
+
+        // press en boton back folder
+        onBackFolderPress: function (oEvent) {
+            var oBreadCrumb = this.byId("breadcrumb");
+            var iLength = oBreadCrumb.getLinks().length;
+            if (iLength === 1) {
+                return;
+            }
+            var aCrumb = oBreadCrumb.getLinks().slice(iLength - 1);
+			if (aCrumb.length) {
+				aCrumb.forEach(function(oLink) {
+					oLink.destroy();
+				});
+			} 
+            var sPath = this.getCurrentFullPath();
+            this.getFolderObjects(sPath);
+
+        },
 
         getCurrentFullPath: function () {
             var sFullPath = "";
@@ -297,10 +316,14 @@ sap.ui.define([
         //
         //
         getFolderObjects: function (sPath) {
+            this.getView().setBusy(true);
             var that = this;
             this.getData(sPath).then(response => {
                 that.getView().getModel("folderModel").setData(response);
-            })
+                that.getView().setBusy(false);
+            }).catch(oError => {
+                that.getView().setBusy(false);
+            });
         },
 
         getDMSUrl: function (sPath) {

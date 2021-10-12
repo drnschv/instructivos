@@ -38,7 +38,10 @@
 
                 <headerToolbar>
 					<OverflowToolbar id="idCrumbToolbar" >
-                    <Button icon="sap-icon://synchronize" press=".onRefreshContent"></Button>
+                        <!--
+                        <Button icon="sap-icon://synchronize" press=".onRefreshContent"></Button> 
+                        -->
+                        <Button icon="sap-icon://navigation-up-arrow" press=".onBackFolderPress"></Button>
 						<Breadcrumbs id="breadcrumb" />
                         <ToolbarSpacer/>
                         <MenuButton text="{i18n>crearTxt}" icon="sap-icon://add">
