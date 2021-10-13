@@ -1,48 +1,49 @@
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/ui/model/json/JSONModel",
-	"../model/formatter",
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/model/json/JSONModel",
+    "../model/formatter",
     "sap/m/Link",
     "sap/m/MenuItem",
     "sap/ui/core/Fragment",
     "sap/m/MessageBox"
 ], function (Controller, JSONModel, formatter, Link, MenuItem, Fragment, MessageBox) {
-	"use strict";
+    "use strict";
 
-	return Controller.extend("profertil.instructivos.controller.Carpeta", {
+    return Controller.extend("profertil.instructivos.controller.Carpeta", {
 
-		formatter: formatter,
+        formatter: formatter,
 
-		/* =========================================================== */
-		/* lifecycle methods                                           */
-		/* =========================================================== */
+        /* =========================================================== */
+        /* lifecycle methods                                           */
+        /* =========================================================== */
 
 		/**
 		 * Called when the worklist controller is instantiated.
 		 * @public
 		 */
-		onInit : function () {
+        onInit: function () {
             var sPath = "PROCEDIMIENTOS_E_INSTRUCTIVOS";
-			var oViewModel,			
-			oViewModel = new JSONModel({
-                rootUrl: "",
-                rootFolderPath: "",
-                repositoryId: "",
-                repositoryName: sPath,
-                repositoryDescription: "Carpetas",
-                newFolderName: ""
-			});
-			this.getView().setModel(oViewModel, "viewModel");           
+            var oViewModel,
+                oViewModel = new JSONModel({
+                    rootUrl: "",
+                    rootFolderPath: "",
+                    repositoryId: "",
+                    repositoryName: sPath,
+                    repositoryDescription: "Carpetas",
+                    newFolderName: "",
+                    newFileName: ""
+                });
+            this.getView().setModel(oViewModel, "viewModel");
             this.createFolderModel();
             this.setRepoUrl();
             this.addBreadcumbPath(sPath);
-           
-		},
+
+        },
 
 
         onMenuAction: function (oEvent) {
             var oItem = oEvent.getParameter("item");
-			var sItemPath = "";
+            var sItemPath = "";
             while (oItem instanceof MenuItem) {
                 sItemPath = oItem.getText() + " > " + sItemPath;
                 oItem = oItem.getParent();
@@ -51,15 +52,66 @@ sap.ui.define([
             var sNewFolder = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfolder");
             var sNewFile = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfile");
             if (sItemPath === sNewFolder) {
-                //sap.m.MessageToast.show("new Folder");
                 this.onCreateFolder();
             }
 
             if (sItemPath === sNewFile) {
-                sap.m.MessageToast.show("new File");
+                //sap.m.MessageToast.show("new File");
+                this.displayUploadFile();
             }
 
         },
+
+        displayUploadFile: function () {
+            if (!this._oUploadFile) {
+                Fragment.load({
+                    type: "XML",
+                    controller: this,
+                    name: 'profertil.instructivos.view.UploadFile'
+                }).then(function (oFragment) {
+                    this._oUploadFile = oFragment;
+                    this.getView().addDependent(this._oUploadFile);
+                    this._oUploadFile.open();
+                }.bind(this));
+            } else {
+                this.getView().getModel("viewModel").setProperty("/newFileName", "");
+                //this.getView().byId("fileUploaderId").setValue("");
+                this._oUploadFile.open();
+            }
+        },
+
+        onFileChange: function (oEvent) {
+            var oFile = oEvent.getParameter("files")[0];
+            this._fileName = oFile.name;
+            this._file = oEvent.getParameter("files")[0];
+            //sap.m.MessageToast.show("change");
+
+        },
+
+
+        onUploadFile: function () {
+            var sPath = this.getBreadcumbPath();
+            var sFileName = this.getView().getModel("viewModel").getProperty("/newFileName");
+            this.getView().setBusy(true);
+            var that = this;
+            this.createFile(sPath, sFileName).then(function () {
+                that.getView().setBusy(false);
+                that._oUploadFile.close();
+                that.onRefreshContent();
+            }).catch(function (oError) {
+                that.getView().setBusy(false);
+                that._oUploadFile.close();
+                console.log(oError);
+                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
+            });
+
+        },
+
+        onCancelarUploadFile: function () {
+            this._oUploadFile.close();
+        },
+
+
 
         onCreateFolder: function () {
             if (!this._oCrearCarpeta) {
@@ -67,7 +119,7 @@ sap.ui.define([
                     type: "XML",
                     controller: this,
                     name: 'profertil.instructivos.view.CrearCarpeta'
-                }).then(function(oFragment) {
+                }).then(function (oFragment) {
                     this._oCrearCarpeta = oFragment;
                     this.getView().addDependent(this._oCrearCarpeta);
                     this._oCrearCarpeta.open();
@@ -82,29 +134,29 @@ sap.ui.define([
         onPressCrearCarpeta: function (oEvent) {
             var sPath = this.getBreadcumbPath();
             var sFolderName = this.getView().getModel("viewModel").getProperty("/newFolderName");
-            this.createFolder(sFolderName, sPath).then(function (){
+            this.createFolder(sFolderName, sPath).then(function () {
                 sap.m.MessageToast.show("Carpeta Creada");
                 this._oCrearCarpeta.close();
                 this.onRefreshContent();
             }.bind(this));
-            
+
         },
 
         onPressCancelarCarpeta: function (oEvent) {
-            this._oCrearCarpeta.close();    
+            this._oCrearCarpeta.close();
         },
 
         onPressDeleteObject: function (oEvent) {
-            var oContext= oEvent.getParameter("listItem").getBindingContext("folderModel");
+            var oContext = oEvent.getParameter("listItem").getBindingContext("folderModel");
             MessageBox.warning("Desea eliminar el objeto?", {
-				actions: ["Eliminar", "Cancelar"],
-	            initialFocus: "Cancelar",
-				onClose: function (sAction) {
-					if (sAction === "Eliminar") {
+                actions: ["Eliminar", "Cancelar"],
+                initialFocus: "Cancelar",
+                onClose: function (sAction) {
+                    if (sAction === "Eliminar") {
                         this.deleteCmisfolder(oContext);
                     }
-				}.bind(this)
-			});
+                }.bind(this)
+            });
 
         },
 
@@ -129,14 +181,14 @@ sap.ui.define([
         onUpdateStarted: function (oEvent) {
             //var oTable = this.byId("tableContent");
             //var oItems = oTable.getBinding("items");
-			//var oBindingPath = table.getModel().getProperty("/object/properties/cmis:objectTypeId/value");
-			//var oSorter = new Sorter(oBindingPath);
-			//oItems.sort(oSorter);
+            //var oBindingPath = table.getModel().getProperty("/object/properties/cmis:objectTypeId/value");
+            //var oSorter = new Sorter(oBindingPath);
+            //oItems.sort(oSorter);
 
         },
 
         // press en una carpeta o archivo
-		onPress : function (oEvent) {
+        onPress: function (oEvent) {
             var oContext = oEvent.getSource().getBindingContext("folderModel");
             var name = this.getCmisObjectName(oContext);
             var objectType = this.getCmisObjectType(oContext);
@@ -153,23 +205,23 @@ sap.ui.define([
                 sap.m.MessageToast.show("Object not found");
             }
 
-		},
-        
+        },
+
         // press en el breadcumb path
         onBreadcrumbPress: function (oEvent, sLinkText) {
-			var oLink = oEvent.getSource();
-			var oBreadCrumb = this.byId("breadcrumb");
-			var iIndex = oBreadCrumb.indexOfLink(oLink);
-			var aCrumb = oBreadCrumb.getLinks().slice(iIndex + 1);
-			if (aCrumb.length) {
-				aCrumb.forEach(function(oLink) {
-					oLink.destroy();
-				});
-			} 
+            var oLink = oEvent.getSource();
+            var oBreadCrumb = this.byId("breadcrumb");
+            var iIndex = oBreadCrumb.indexOfLink(oLink);
+            var aCrumb = oBreadCrumb.getLinks().slice(iIndex + 1);
+            if (aCrumb.length) {
+                aCrumb.forEach(function (oLink) {
+                    oLink.destroy();
+                });
+            }
             var sPath = this.getCurrentFullPath();
             this.getFolderObjects(sPath);
 
-		},
+        },
 
         // press en boton back folder
         onBackFolderPress: function (oEvent) {
@@ -179,11 +231,11 @@ sap.ui.define([
                 return;
             }
             var aCrumb = oBreadCrumb.getLinks().slice(iLength - 1);
-			if (aCrumb.length) {
-				aCrumb.forEach(function(oLink) {
-					oLink.destroy();
-				});
-			} 
+            if (aCrumb.length) {
+                aCrumb.forEach(function (oLink) {
+                    oLink.destroy();
+                });
+            }
             var sPath = this.getCurrentFullPath();
             this.getFolderObjects(sPath);
 
@@ -200,26 +252,26 @@ sap.ui.define([
 
         addBreadcumbPath: function (sPath) {
             var oBreadCrumb = this.byId("breadcrumb");
-			var oLink = new Link({
-				text: sPath,
-				press:[sPath, this.onBreadcrumbPress, this]
-			});
-			oBreadCrumb.addLink(oLink);
+            var oLink = new Link({
+                text: sPath,
+                press: [sPath, this.onBreadcrumbPress, this]
+            });
+            oBreadCrumb.addLink(oLink);
         },
 
         getBreadcumbPath: function () {
             var aLinks = [];
             var sPath = "";
             aLinks = this.getBreadcumbLinks();
-            for (var i=1; i < aLinks.length; i++) {
-                sPath = sPath +"/" + aLinks[i].getProperty("text");
+            for (var i = 1; i < aLinks.length; i++) {
+                sPath = sPath + "/" + aLinks[i].getProperty("text");
             }
             return sPath;
         },
 
         getBreadcumbLinks: function () {
             var oBreadCrumb = this.byId("breadcrumb");
-			return oBreadCrumb.getLinks();
+            return oBreadCrumb.getLinks();
         },
 
         getRepositoryId: function () {
@@ -235,16 +287,16 @@ sap.ui.define([
 
         getCmisObjectType: function (oContext) {
             return this.getCmisObjectValue(oContext, "cmis:objectTypeId");
-        },   
+        },
 
         getCmisParentId: function (oContext) {
             return this.getCmisObjectValue(oContext, "sap:parentIds");
-        },  
+        },
 
         getCmisObjectValue: function (oContext, sTag) {
-            var sPath=oContext.getPath();
-            var oCmisObject = oContext.getProperty(sPath); 
-            return oCmisObject.object.properties[sTag].value;           
+            var sPath = oContext.getPath();
+            var oCmisObject = oContext.getProperty(sPath);
+            return oCmisObject.object.properties[sTag].value;
         },
 
         createFolderModel: function () {
@@ -254,9 +306,9 @@ sap.ui.define([
 
 
 
+        //------------------------------------------
         //
-        //
-        //
+        //------------------------------------------
         createFolder: function (foldername, path) {
             var data = new FormData();
             var dataObject = {
@@ -288,7 +340,7 @@ sap.ui.define([
             var data = new FormData();
             var dataObject = {
                 "cmisaction": "deleteTree",
-                "continueOnFailure": false,              
+                "continueOnFailure": false,
                 "objectId": sFolderId
             };
 
@@ -301,7 +353,7 @@ sap.ui.define([
             var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
             return $.ajax({
                 url: sDmsUrl,
-                type: "POST",   
+                type: "POST",
                 data: data,
                 contentType: false,
                 processData: false
@@ -309,8 +361,33 @@ sap.ui.define([
 
         },
 
+        createFile: function (sPath, sFileName) {
+            var data = new FormData();
+            var dataObject = {
+                "cmisaction": "createDocument",
+                "propertyId[0]": "cmis:name",
+                "propertyValue[0]": sFileName,   	                    
+                "propertyId[1]": "cmis:objectTypeId",
+                "propertyValue[1]": "cmis:document",
+                "media": this._file,   			// viene de onFileChange
+            }
 
+            var keys = Object.keys(dataObject);
+            for (var key of keys) {
+                data.append(key, dataObject[key]);
+            }
 
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+
+            return $.ajax({
+                url: sDmsUrl + (!sPath ? "" : sPath),
+                type: "POST",
+                data: data,
+                contentType: false,
+                processData: false
+            });
+
+        },
 
         //
         //
@@ -335,12 +412,12 @@ sap.ui.define([
         getData: function (path) {
             var url = this.getDMSUrl("/SDM_API/browser");
             var fullUrl = path ? url + "/" + path : url;
-            return $.get({url: fullUrl});
+            return $.get({ url: fullUrl });
 
         },
 
         setRepoUrl: function () {
-            var sRepositoryName = this.getView().getModel("viewModel").getProperty("/repositoryName"); 
+            var sRepositoryName = this.getView().getModel("viewModel").getProperty("/repositoryName");
             var that = this;
             this.getData("").then(response => {
                 var repos = Object.keys(response).filter(repo => response[repo].repositoryName == sRepositoryName);
@@ -352,85 +429,13 @@ sap.ui.define([
                 that.getView().getModel("viewModel").setProperty("/repositoryId", response[repos[0]].repositoryId);
                 that.getView().getModel("viewModel").setProperty("/repositoryName", response[repos[0]].repositoryName);
                 that.getView().getModel("viewModel").setProperty("/repositoryDescription", response[repos[0]].repositoryDescription);
-                that.getFolderObjects(root);  
+                that.getFolderObjects(root);
             });
-
-        },  
-
-
-        
-
-	});
-});
-
-
-
-/*
- * 
-   
-   onCreateFolder2: function () {
-            if (!this.oCreateFolderDialog) {
-				this.oCreateFolderDialog = new sap.m.Dialog({
-                    title: "Crear Nueva Carpeta",
-                    class: "sapUiResponsiveMargin",					
-					content: [
-						new sap.m.Label({text: "Nombre de la Carpeta",labelFor: "carpetaName"}),
-						new sap.m.Input("carpetaName", {placeholder: "Nombre de la carpeta"})
-					],
-					beginButton: new sap.m.Button({
-						type: sap.m.ButtonType.Emphasized,
-						text: "Crear",
-						press: function () {
-                            var sPath = this.getBreadcumbPath();
-                            var sFolderName = sap.ui.getCore().byId("carpetaName").getValue();
-                            //sap.m.MessageToast.show(sPath + "-" + sFolderName);
-							this.createFolder(sFolderName, sPath);
-							this.oCreateFolderDialog.close();
-						}.bind(this)
-					}),
-					endButton: new sap.m.Button({
-						text: "Cancelar",
-						press: function () {
-							this.oCreateFolderDialog.close();
-						}.bind(this)
-					})
-				});
-			}
-			this.oCreateFolderDialog.open();
 
         },
-   
-             return new Promise(function (resolve, reject) {
-                
-                var oResponse = new sap.ui.model.json.JSONModel();
-                oResponse.attachRequestCompleted(function() {
-                    resolve(oResponse.getData());
-                });
-
-                if (path === "") {
-                    oResponse.loadData("../localService/xroot.json"); 
-                } else if (path === "C"){
-                    oResponse.loadData("../localService/xfolders.json"); 
-                } else if (path === "F") {
-                    oResponse.loadData("../localService/xfiles.json");
-                } else {
-                    oResponse.loadData("../localService/xfolders.json");
-                }
-
-            });
-
-//getAdjuntos: function (oResponse) {
-        //    var aObjects = [];
-        //    for(var i=0; i < oResponse.objects.length; i++) {
-        //        var oFolderContent = {};
-        //        var oObjectAttributes = {};
-        //        oFolderContent = oResponse.objects[i].object.properties;
-        //        oObjectAttributes.name = oFolderContent["cmis:name"].value;
-        //        oObjectAttributes.type = oFolderContent["cmis:objectTypeId"].value; 
-        //        aObjects.push(oObjectAttributes);
-        //    }
-        //    return aObjects;
-        //},
 
 
- */
+
+
+    });
+});
