@@ -148,12 +148,16 @@ sap.ui.define([
 
         onPressDeleteObject: function (oEvent) {
             var oContext = oEvent.getParameter("listItem").getBindingContext("folderModel");
+            var sType = this.getCmisObjectType(oContext);
             MessageBox.warning("Desea eliminar el objeto?", {
                 actions: ["Eliminar", "Cancelar"],
                 initialFocus: "Cancelar",
                 onClose: function (sAction) {
-                    if (sAction === "Eliminar") {
+                    if (sAction === "Eliminar" && sType === "cmis:folder") {
                         this.deleteCmisfolder(oContext);
+                    }
+                    if (sAction === "Eliminar" && sType === "cmis:document") {
+                        this.deleteCmisdocument(oContext);
                     }
                 }.bind(this)
             });
@@ -167,6 +171,20 @@ sap.ui.define([
                 this.onRefreshContent();
             }.bind(this)).catch(function () {
                 sap.m.MessageToast.show("Error al intentar eliminar el objeto. Intente mas tarde")
+            }.bind(this));
+
+        },
+
+        deleteCmisdocument: function (oContext) {
+            var objectId = this.getCmisObjectId(oContext);
+            this.getView().setBusy(true);
+            this.deleteDocumentFile(objectId).then(function () {
+                this.getView().setBusy(false);
+                sap.m.MessageToast.show("Objeto Eliminado");
+                this.onRefreshContent();
+            }.bind(this)).catch(function (oError) {
+                this.getView().setBusy(false);
+                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message)
             }.bind(this));
 
         },
@@ -342,6 +360,30 @@ sap.ui.define([
                 "cmisaction": "deleteTree",
                 "continueOnFailure": false,
                 "objectId": sFolderId
+            };
+
+            var keys = Object.keys(dataObject);
+
+            for (var key of keys) {
+                data.append(key, dataObject[key]);
+            }
+
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            return $.ajax({
+                url: sDmsUrl,
+                type: "POST",
+                data: data,
+                contentType: false,
+                processData: false
+            });
+
+        },
+
+        deleteDocumentFile: function (sObjectId) {
+            var data = new FormData();
+            var dataObject = {
+                "cmisaction": "delete",
+                "objectId": sObjectId
             };
 
             var keys = Object.keys(dataObject);
