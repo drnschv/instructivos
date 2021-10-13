@@ -51,12 +51,12 @@ sap.ui.define([
             sItemPath = sItemPath.substr(0, sItemPath.lastIndexOf(" > "));
             var sNewFolder = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfolder");
             var sNewFile = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfile");
+            
             if (sItemPath === sNewFolder) {
-                this.onCreateFolder();
+                this.displayCreateFolder();
             }
 
             if (sItemPath === sNewFile) {
-                //sap.m.MessageToast.show("new File");
                 this.displayUploadFile();
             }
 
@@ -84,7 +84,6 @@ sap.ui.define([
             var oFile = oEvent.getParameter("files")[0];
             this._fileName = oFile.name;
             this._file = oEvent.getParameter("files")[0];
-            //sap.m.MessageToast.show("change");
 
         },
 
@@ -92,16 +91,18 @@ sap.ui.define([
         onUploadFile: function () {
             var sPath = this.getBreadcumbPath();
             var sFileName = this.getView().getModel("viewModel").getProperty("/newFileName");
+            if (sFileName === "") {
+                return;
+            }
+            this._oUploadFile.close();
             this.getView().setBusy(true);
             var that = this;
             this.createFile(sPath, sFileName).then(function () {
                 that.getView().setBusy(false);
-                that._oUploadFile.close();
                 that.onRefreshContent();
             }).catch(function (oError) {
                 that.getView().setBusy(false);
-                that._oUploadFile.close();
-                console.log(oError);
+                //that._oUploadFile.close();
                 sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
             });
 
@@ -113,7 +114,7 @@ sap.ui.define([
 
 
 
-        onCreateFolder: function () {
+        displayCreateFolder: function () {
             if (!this._oCrearCarpeta) {
                 Fragment.load({
                     type: "XML",
@@ -134,11 +135,19 @@ sap.ui.define([
         onPressCrearCarpeta: function (oEvent) {
             var sPath = this.getBreadcumbPath();
             var sFolderName = this.getView().getModel("viewModel").getProperty("/newFolderName");
+            if (sFolderName === "") {
+                return;
+            }
+            this._oCrearCarpeta.close();
+            this.getView().setBusy(true);    
             this.createFolder(sFolderName, sPath).then(function () {
+                this.getView().setBusy(false);
                 sap.m.MessageToast.show("Carpeta Creada");
-                this._oCrearCarpeta.close();
                 this.onRefreshContent();
-            }.bind(this));
+            }.bind(this)).catch(function (oError) {
+                this.getView().setBusy(false);
+                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
+            });
 
         },
 
@@ -184,7 +193,7 @@ sap.ui.define([
                 this.onRefreshContent();
             }.bind(this)).catch(function (oError) {
                 this.getView().setBusy(false);
-                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message)
+                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
             }.bind(this));
 
         },
@@ -217,8 +226,7 @@ sap.ui.define([
                 var sPath = this.getCurrentFullPath();
                 this.getFolderObjects(sPath);
             } else if (objectType === "cmis:document") {
-                //sap.m.MessageToast.show("Document");
-                //download document
+                this.downloadDocumentFile(objectId, name);
             } else {
                 sap.m.MessageToast.show("Object not found");
             }
@@ -400,6 +408,13 @@ sap.ui.define([
                 contentType: false,
                 processData: false
             });
+
+        },
+
+        downloadDocumentFile: function (sObjectId, sFileName) {
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            var sObjectUri = sDmsUrl + "?objectId=" + sObjectId + "&cmisSelector=content&download=attachment&filename=" + sFileName;
+            window.open(sObjectUri, "_blank");
 
         },
 
