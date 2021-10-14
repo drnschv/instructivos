@@ -25,22 +25,23 @@
             <Table id="tableContent"
                 showSeparators="Inner" 
                 updateStarted=".onUpdateStarted" 
-                headerText="" 
+                headerText=""
+                growing="true" 
                 mode="Delete"
                 delete=".onPressDeleteObject" 
                 items="{
                     path: 'folderModel>/objects',
-                    sorter: {
-                        path: 'object/properties/cmis:objectTypeId/value',
-                        descending: true
-                    }
+                    sorter: [{
+                            path: 'object/properties/cmis:objectTypeId/value',
+                            descending: true 
+                        },{
+                            path: 'object/properties/cmis:name/value',
+                            descending: false
+                    }]
                 }">
 
                 <headerToolbar>
 					<OverflowToolbar id="idCrumbToolbar" >
-                        <!--
-                        <Button icon="sap-icon://synchronize" press=".onRefreshContent"></Button> 
-                        -->
                         <Button icon="sap-icon://navigation-up-arrow" press=".onBackFolderPress"></Button>
 						<Breadcrumbs id="breadcrumb" />
                         <ToolbarSpacer/>
@@ -77,7 +78,13 @@
                                     ],
                                     formatter: '.formatter.formatObjectType'
                                 }"
-                                state="Information" 
+                                state="{
+                                    parts: [
+                                        { path: 'folderModel>object/properties/cmis:name/value' },
+                                        { path: 'folderModel>object/properties/cmis:objectTypeId/value' }
+                                    ],
+                                    formatter: '.formatter.formatObjectTypeColor'
+                                }" 
                             />
                             <Text text="{folderModel>object/properties/cmis:name/value}" />
                             <Text text="{

@@ -21,6 +21,52 @@ sap.ui.define([], function () {
 
 		},
 
+        formatObjectTypeColor: function (sName, sType) {
+            var sTypeReturn = "Information";
+            var sExtension = sName.split('.').pop();
+
+            if (sType === "cmis:document") {
+				switch (sExtension) { 
+					case 'pdf':
+                        sTypeReturn = "Error";
+                        break;
+                    case 'xls':
+					case 'xlsx':
+						sTypeReturn = "Success";
+						break;
+                    case 'png':
+					case 'jpg':
+					case 'jpeg':
+					case 'bmp':
+                        sTypeReturn = "Indication06";
+                        break;
+                    case 'doc':
+					case 'docx':
+						sTypeReturn = "Information";
+						break;
+					case 'zip':
+						sTypeReturn = "Indication03";
+						break;
+					case 'mp4': 
+					case 'mpeg': 
+						sTypeReturn = "Indication03";
+						break;
+					case 'opus': 
+					case 'mp3':
+						sTypeReturn = "Indication03";
+						break;
+                    default:
+                        sTypeReturn = "None";
+                }
+            }
+
+			if (sType === "cmis:folder") {
+				sTypeReturn = "Warning";
+			}
+
+            return sTypeReturn;
+        },
+
 		formatObjectType: function (sName, sType) {
 			var sIcon = "sap-icon://document";
 			var sExtension = sName.split('.').pop();
