@@ -35,7 +35,9 @@ sap.ui.define([
                     repositoryName: sPath,
                     repositoryDescription: "Carpetas",
                     newFolderName: "",
-                    newFileName: ""
+                    newFileName: "",
+                    newLinkName: "",
+                    newLinkUrl: ""
                 });
             this.getView().setModel(oViewModel, "viewModel");
             this.createFolderModel();
@@ -55,6 +57,7 @@ sap.ui.define([
             sItemPath = sItemPath.substr(0, sItemPath.lastIndexOf(" > "));
             var sNewFolder = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfolder");
             var sNewFile = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newfile");
+            var sNewLink = this.getOwnerComponent().getModel("i18n").getResourceBundle().getText("newlink");
             
             if (sItemPath === sNewFolder) {
                 this.displayCreateFolder();
@@ -64,6 +67,51 @@ sap.ui.define([
                 this.displayUploadFile();
             }
 
+            if (sItemPath === sNewLink) {
+                this.displayCreateLink();
+            }
+
+        },
+
+        displayCreateLink: function () {
+            if (!this._oCrearLink) {
+                Fragment.load({
+                    type: "XML",
+                    controller: this,
+                    name: 'profertil.instructivos.view.CrearLink'
+                }).then(function (oFragment) {
+                    this._oCrearLink = oFragment;
+                    this.getView().addDependent(this._oCrearLink);
+                    this._oCrearLink.open();
+                }.bind(this));
+            } else {
+                this.getView().getModel("viewModel").setProperty("/newLinkName", "");
+                this.getView().getModel("viewModel").setProperty("/newLinkUrl", "");
+                this._oCrearLink.open();
+            }
+
+        },
+
+        onPressCrearLink: function (oEvent) {
+            var sPath = this.getBreadcumbPath();
+            var sLinkName = this.getView().getModel("viewModel").getProperty("/newLinkName");
+            var sLinkUrl = this.getView().getModel("viewModel").getProperty("/newLinkUrl");
+            if (sLinkName === "" || sLinkUrl === "") {
+                return;
+            }
+            this._oCrearLink.close();
+            this.setViewBusy(true);    
+            this.createLink(sLinkName, sLinkUrl, sPath).then(function () {
+                this.onRefreshContent();
+            }.bind(this)).catch(function (oError) {
+                this.setViewBusy(false);
+                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
+            }.bind(this));
+
+        },
+
+        onPressCancelarLink: function () {
+            this._oCrearLink.close();
         },
 
         displayUploadFile: function () {
@@ -166,6 +214,9 @@ sap.ui.define([
                     if (sAction === "Eliminar" && sType === "cmis:document") {
                         this.deleteCmisdocument(oContext);
                     }
+                    if (sAction === "Eliminar" && sType === "sap:link") {
+                        this.deleteCmisdocument(oContext);
+                    }
                 }.bind(this)
             });
 
@@ -222,6 +273,13 @@ sap.ui.define([
                 this.getFolderObjects(sPath);
             } else if (objectType === "cmis:document") {
                 this.downloadDocumentFile(objectId, name);
+            } else if (objectType === "sap:link") { 
+                this.followLink(objectId, name).then(function (response) {
+                    var sUrl = response.split("=")[1];
+                    window.open(sUrl);
+                }).catch( function (oError){
+                    console.log(oError.responseJSON.message);
+                });
             } else {
                 sap.m.MessageToast.show("Object not found");
             }
@@ -411,6 +469,16 @@ sap.ui.define([
             window.open(sObjectUri, "_blank");
         },
 
+        followLink: function (sObjectId, sFileName) {
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            var sObjectUri = sDmsUrl + "?objectId=" + sObjectId + "&cmisSelector=content";
+            return $.ajax({
+                url: sObjectUri,
+                type: "GET"
+            });
+
+        },
+
         createFile: function (sPath, sFileName) {
             var data = new FormData();
             var dataObject = {
@@ -431,6 +499,38 @@ sap.ui.define([
 
             return $.ajax({
                 url: sDmsUrl + (!sPath ? "" : sPath),
+                type: "POST",
+                data: data,
+                contentType: false,
+                processData: false
+            });
+
+        },
+
+        createLink: function (sLinkName, sLinkUrl, path) {
+            var sLinkNameFinal = sLinkName + ".url";
+            var data = new FormData();
+            var dataObject = {
+                "cmisaction": "createDocument",
+                "propertyId[0]": "cmis:name",
+                "propertyValue[0]": sLinkNameFinal,
+                "propertyId[1]": "cmis:objectTypeId",
+                "propertyValue[1]": "cmis:document",
+                "propertyId[2]": "cmis:secondaryObjectTypeIds",
+                "propertyValue[2]": "sap:createLink",
+                "propertyId[3]": "sap:linkExternalURL",
+                "propertyValue[3]": sLinkUrl
+            };
+
+            var keys = Object.keys(dataObject);
+
+            for (var key of keys) {
+                data.append(key, dataObject[key]);
+            }
+
+            var sDmsUrl = this.getView().getModel("viewModel").getProperty("/rootUrl");
+            return $.ajax({
+                url: sDmsUrl + (!path ? "" : path),
                 type: "POST",
                 data: data,
                 contentType: false,

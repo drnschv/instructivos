@@ -16,9 +16,6 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-            <!--    
-            <Text text="{viewModel>/repositoryName}" />
-            -->
         </semantic:headerContent>
 
         <semantic:content>
@@ -50,6 +47,7 @@
                                 <Menu itemSelected="onMenuAction">
                                     <MenuItem text="{i18n>newfolder}" icon="sap-icon://add-folder" />
                                     <MenuItem text="{i18n>newfile}" icon="sap-icon://add-document" />
+                                    <MenuItem text="{i18n>newlink}" icon="sap-icon://broken-link" />
                                 </Menu>
                             </menu>
                         </MenuButton>

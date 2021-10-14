@@ -16,7 +16,6 @@ sap.ui.define([], function () {
 
 		formatMSDate: function (sMSDate) {
 			var d = new Date(sMSDate);
-			//return d.toDateString();
 			return d.toLocaleDateString();
 
 		},
@@ -63,6 +62,10 @@ sap.ui.define([], function () {
 			if (sType === "cmis:folder") {
 				sTypeReturn = "Warning";
 			}
+
+            if (sType === "sap:link") {
+                sTypeReturn = "Information"
+            }
 
             return sTypeReturn;
         },
@@ -115,6 +118,10 @@ sap.ui.define([], function () {
 			if (sType === "cmis:folder") {
 				sIcon = "sap-icon://open-folder";
 			}
+
+            if (sType === "sap:link") {
+                sIcon = "sap-icon://chain-link";
+            }
 
 			return sIcon;
 		}

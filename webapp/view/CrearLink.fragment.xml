@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core" >
+    <Dialog title="{i18n>crearLinkTit}">
+        <content>
+            <Label text="{i18n>nombreLinkTxt}" class="sapUiTinyMargin"></Label>
+            <Input 
+                id="linkNameId" 
+                value="{viewModel>/newLinkName}" 
+                placeholder="{i18n>linkPlaceHolderNameTxt}" 
+                width="95%" 
+                class="sapUiTinyMargin">
+            </Input>
+            <Label text="{i18n>urlLinkTxt}" class="sapUiTinyMargin"></Label>
+            <Input 
+                id="linkUrlId" 
+                value="{viewModel>/newLinkUrl}" 
+                placeholder="{i18n>linkPlaceHolderUrlTxt}" 
+                width="95%" 
+                class="sapUiTinyMargin">
+            </Input>
+        </content>
+    <beginButton>
+        <Button text="{i18n>crearLinkBtn}" type="Emphasized" press=".onPressCrearLink"></Button>
+    </beginButton>
+    <endButton>
+        <Button text="{i18n>cancelarBtn}" press=".onPressCancelarLink"></Button>
+    </endButton>
+    </Dialog>
+</core:FragmentDefinition>
