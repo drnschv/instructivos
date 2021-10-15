@@ -16,7 +16,9 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
-            <Text text="{viewModel>/userName} - {viewModel>/userMail}" />
+            <!-- 
+                <Text text="{viewModel>/userName} - {viewModel>/userMail}" />
+            -->
         </semantic:headerContent>
 
         <semantic:content>
