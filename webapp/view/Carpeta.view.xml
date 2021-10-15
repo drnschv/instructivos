@@ -16,6 +16,7 @@
         </semantic:titleHeading>
 
         <semantic:headerContent>
+            <Text text="{viewModel>/userName} - {viewModel>/userMail}" />
         </semantic:headerContent>
 
         <semantic:content>
@@ -29,8 +30,8 @@
                 items="{
                     path: 'folderModel>/objects',
                     sorter: [{
-                            path: 'object/properties/cmis:objectTypeId/value',
-                            descending: true 
+                            path: 'object/properties/order',
+                            descending: false 
                         },{
                             path: 'object/properties/cmis:name/value',
                             descending: false

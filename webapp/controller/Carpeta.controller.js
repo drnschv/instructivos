@@ -37,16 +37,41 @@ sap.ui.define([
                     newFolderName: "",
                     newFileName: "",
                     newLinkName: "",
-                    newLinkUrl: ""
+                    newLinkUrl: "",
+                    userName: "",
+                    userMail: "",
+                    userId: ""
+
                 });
             this.getView().setModel(oViewModel, "viewModel");
             this.createFolderModel();
             this.setRepoUrl();
             this.addBreadcumbPath(sPath);
+            this.getUserInfo();
 
         },
 
+        getUserInfo: function () {
+            if (typeof sap.ushell === "undefined") {
+                this.getView().getModel("viewModel").setProperty("/userName", "Default User");
+                this.getView().getModel("viewModel").setProperty("/userMail", "default@mail");
+                this.getView().getModel("viewModel").setProperty("/userId", "");
+                return;
+            }
+            sap.ushell.Container.getServiceAsync("UserInfo")
+            .then(function (UserInfo) {
+                this.getView().getModel("viewModel").setProperty("/userName", UserInfo.getFullName());
+                this.getView().getModel("viewModel").setProperty("/userMail", UserInfo.getEmail());
+                this.getView().getModel("viewModel").setProperty("/userMail", UserInfo.getId());
+            }.bind(this))
+            .catch(function () {
+                this.getView().getModel("viewModel").setProperty("/userName", "Default User");
+                this.getView().getModel("viewModel").setProperty("/userMail", "default@mail");
+                this.getView().getModel("viewModel").setProperty("/userId", "");
+            }.bind(this));
 
+        },
+        
         onMenuAction: function (oEvent) {
             var oItem = oEvent.getParameter("item");
             var sItemPath = "";
@@ -101,12 +126,14 @@ sap.ui.define([
             }
             this._oCrearLink.close();
             this.setViewBusy(true);    
-            this.createLink(sLinkName, sLinkUrl, sPath).then(function () {
-                this.onRefreshContent();
-            }.bind(this)).catch(function (oError) {
-                this.setViewBusy(false);
-                sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
-            }.bind(this));
+            this.createLink(sLinkName, sLinkUrl, sPath)
+                .then(function () {
+                    this.onRefreshContent();
+                }.bind(this))
+                .catch(function (oError) {
+                    this.setViewBusy(false);
+                    sap.m.MessageToast.show(oError.status + ": " + oError.responseJSON.message);
+                }.bind(this));
 
         },
 
@@ -553,14 +580,30 @@ sap.ui.define([
 
         },
 
+        addAttributes: function (response) {
+            for (var i=0; i < response.objects.length; i++) {
+                var sType = response.objects[i].object.properties["cmis:objectTypeId"].value;
+                if (sType === "cmis:folder") {
+                    response.objects[i].object.properties.order = "A";
+                }
+                if (sType === "cmis:document") {
+                    response.objects[i].object.properties.order = "B";
+                }
+                if (sType === "sap:link") {
+                    response.objects[i].object.properties.order = "C";
+                }    
+            }
+            
+        },
+
         //
         //
         //
         getFolderObjects: function (sPath) {
-            //this.getView().setBusy(true);
             this.setViewBusy(true);
             var that = this;
             this.getData(sPath).then(response => {
+                that.addAttributes(response);
                 that.getView().getModel("folderModel").setData(response);
                 that.setViewBusy(false);
             }).catch(oError => {
